@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agencia Creativa Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #f4f4f4;
+      background-color: #121212;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    header {
+      background: url('6749fd8104d10cf9b8a41933_67408a3f5ee23d8997b60bb8_ideas-de-negocios-rentables.jpg.jpeg') no-repeat center center/cover;
+      color: white;
+      padding: 5rem 1rem 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      height: auto;
+      z-index: 10;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .btn-1 {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 2rem;
+      background: #ff4081;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-1:hover {
+      background: #e91e63;
+    }
+
+    section {
+      padding: 3rem 1rem;
+    }
+
+    .servicios {
+      background: #1e1e1e;
+      padding: 2rem 1rem;
+      border-radius: 10px;
+    }
+
+    .services-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 2rem;
+    }
+
+    .services-1 {
+      flex: 1 1 300px;
+      text-align: center;
+      background: #2a2a2a;
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .services-1:hover {
+      transform: scale(1.05);
+    }
+
+    .tabla-planes {
+      width: 100%;
+      margin: 3rem 0;
+      border-collapse: collapse;
+      table-layout: fixed;
+      color: #fff;
+    }
+
+    caption {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    th, td {
+      border: 1px solid #555;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    th {
+      background: #333;
+    }
+
+    td:hover {
+      background: #2e2e2e;
+    }
+
+    .formulario {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    fieldset {
+      border: 1px solid #555;
+      padding: 1rem;
+    }
+
+    legend {
+      font-weight: bold;
+      padding: 0 0.5rem;
+    }
+
+    .form-control {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-control input,
+    .form-control textarea {
+      padding: 0.5rem;
+      border: 1px solid #666;
+      border-radius: 4px;
+      background-color: #2b2b2b;
+      color: white;
+    }
+
+    .form-control input:focus,
+    .form-control textarea:focus {
+      border-color: #ff4081;
+      outline: none;
+    }
+
+    .footer {
+      background: #111;
+      color: white;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .footer .link {
+      flex: 1 1 200px;
+      margin: 1rem 0;
+    }
+
+    .footer h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: white;
+    }
+
+    .info-extra,
+    .testimonios {
+      background: #1a1a1a;
+      border-radius: 10px;
+      margin-top: 2rem;
+      padding: 2rem;
+    }
+
+    .info-extra h2,
+    .testimonios h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonios blockquote {
+      background: #2e2e2e;
+      border-left: 5px solid #ff4081;
+      margin: 1rem auto;
+      padding: 1rem;
+      max-width: 800px;
+      border-radius: 5px;
+      font-style: italic;
+    }
+    .lista h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: #f0f0f0;
+    }
+
+    .link-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .link {
+      min-width: 150px;
+    }
+
+    .link h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #ffd700;
+    }
+    .link ul {
+      list-style: none;
+      padding: 0;
+    }
+    .link li {
+      margin-bottom: 8px;
+    }
+    .link a {
+      text-decoration: none;
+      color: #ccc;
+      transition: color 0.3s ease;
+    }
+    .link a:hover {
+      color: #fff;
+    }
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .container-footer {
+       background: url(4-2-mp83lwKo6rCoX6zj.avif) no-repeat center center/cover;
+      padding: 5rem 1rem 3rem;
+      text-align: center;
+      position: relative; }
+
+    footer a {
+      color: #9fdfff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="abc-logo-png_seeklogo-314499.png" alt="Logo de la empresa" class="logo">
+    <div class="container">
+      <h1>Soluciones Creativas Digitales</h1>
+      <p>Impulsamos tu marca con estrategias innovadoras en redes sociales, branding y marketing digital.</p>
+      <a href="#contacto" class="btn-1">Contáctanos</a>
+    </div>
+  </header>
+
+  <section class="servicios container">
+    <h2 style="text-align:center; margin-bottom:2rem">Nuestros Servicios</h2>
+    <div class="services-group">
+      <div class="services-1">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="80" alt="Redes sociales">
+        <h3>Redes Sociales</h3>
+        <p>Gestión de contenido, campañas publicitarias y community management en todas las plataformas.</p>
+      </div>
+      <div class="services-1">
+        <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" width="80" alt="Branding">
+        <h3>Branding</h3>
+        <p>Construimos identidades visuales memorables que posicionan tu marca en el mercado.</p>
+      </div>
+      <div class="services-1">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" width="80" alt="Marketing">
+        <h3>Marketing Digital</h3>
+        <p>Desarrollamos estrategias de marketing personalizadas para atraer y fidelizar clientes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container info-extra">
+    <h2>¿Por qué elegirnos?</h2>
+    <p>Somos una agencia apasionada por la creatividad y la innovación. Nos destacamos por nuestra atención al detalle, resultados medibles y acompañamiento constante. Nuestro equipo está comprometido con el éxito de tu marca en el mundo digital.</p>
+  </section>
+
+  <section class="container">
+    <table class="tabla-planes">
+      <caption>Comparación de Planes</caption>
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th>Básico</th>
+          <th>Estándar</th>
+          <th>Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Redes Sociales</td>
+          <td>3 publicaciones semanales</td>
+          <td>5 publicaciones + 1 campaña</td>
+          <td>7 publicaciones + campañas + informes</td>
+        </tr>
+        <tr>
+          <td>Branding</td>
+          <td>Logo básico</td>
+          <td>Logo + paleta de color</td>
+          <td>Identidad completa</td>
+        </tr>
+        <tr>
+          <td>Marketing</td>
+          <td>Email marketing</td>
+          <td>Campañas SEM</td>
+          <td>SEM + SEO + Remarketing</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="container testimonios">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <blockquote>
+      “Gracias a esta agencia, mi negocio creció un 300% en redes sociales. ¡Increíble equipo humano y profesional!”
+    </blockquote>
+    <blockquote>
+      “Me encantó cómo entendieron mi visión y la convirtieron en una marca con identidad. Totalmente recomendados.”
+    </blockquote>
+  </section>
+
+  <section id="contacto" class="container formulario">
+    <form>
+      <fieldset>
+        <legend>Contáctanos</legend>
+        <div class="form-control">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+        </div>
+        <div class="form-control">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+        </div>
+        <div class="form-control">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+        </div>
+        <button type="submit" class="btn-1">Enviar</button>
+      </fieldset>
+    </form>
+  </section>
+
+<section class="lista">
+  <h2>DATOS EXTRA</h2>
+  <div class="link-container">
+    <div class="link">
+      <h3>Agencia</h3>
+      <ul>
+        <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="#">Equipo</a></li>
+        <li><a href="#">Clientes</a></li>
+      </ul>
+    </div>
+    <div class="link">
+      <h3>Servicios</h3>
+      <ul>
+        <li><a href="#">Redes Sociales</a></li>
+        <li><a href="#">Branding</a></li>
+        <li><a href="#">Marketing</a></li>
+      </ul>
+    </div>
+    <div class="link">
+      <h3>Contacto</h3>
+      <ul>
+        <li><a href="#">Whatsapp</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  
+  <footer>
+    <div class="container-footer">
+      <p>&copy; 2025 Agencia Creativa Digital. Todos los derechos reservados. | <a href="#">Política de privacidad</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
